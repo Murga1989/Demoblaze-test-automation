@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DemoBlazeSuite" parallel="methods" thread-count="3">
+
+    <parameter name="browser" value="chrome"/>
+
+    <listeners>
+        <listener class-name="com.demoblaze.listeners.TestListener"/>
+        <listener class-name="com.demoblaze.listeners.RetryListener"/>
+    </listeners>
+
+    <test name="SmokeTest">
+        <classes>
+            <class name="com.demoblaze.tests.LoginTest">
+                <methods>
+                    <include name="testValidLogin"/>
+                    <include name="testInvalidLogin"/>
+                </methods>
+            </class>
+            <class name="com.demoblaze.tests.HomePageTest">
+                <methods>
+                    <include name="testHomePageLoad"/>
+                    <include name="testProductCategories"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RegressionTest">
+        <classes>
+            <class name="com.demoblaze.tests.LoginTest"/>
+            <class name="com.demoblaze.tests.SignUpTest"/>
+            <class name="com.demoblaze.tests.HomePageTest"/>
+            <class name="com.demoblaze.tests.ProductTest"/>
+            <class name="com.demoblaze.tests.CartTest"/>
+        </classes>
+    </test>
+
+</suite>
