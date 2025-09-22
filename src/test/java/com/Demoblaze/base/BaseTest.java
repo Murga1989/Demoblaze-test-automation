@@ -1,4 +1,4 @@
-package com.demoblaze.base;
+package com.Demoblaze.base;
 
 import com.demoblaze.utils.ConfigReader;
 import com.demoblaze.utils.ExtentReportManager;
@@ -19,6 +19,10 @@ public class BaseTest {
     private static final ThreadLocal<WebDriver> driverThreadLocal = new ThreadLocal<>();
     private static final ThreadLocal<WebDriverWait> waitThreadLocal = new ThreadLocal<>();
     protected Properties config;
+
+    public static WebDriverWait getWait() {
+        return null;
+    }
 
     @BeforeSuite
     public void beforeSuite() {
@@ -115,4 +119,4 @@ public class BaseTest {
 
     public static WebDriver getDriver() {
         return driverThreadLocal.get();
-    }
+    }}

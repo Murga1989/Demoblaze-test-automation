@@ -1,9 +1,9 @@
-package com.demoblaze.pages;
+package com.Demoblaze.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ProductPage extends BasePage {
+class ProductPage extends com.demoblaze.pages.BasePage {
 
     // Product details elements
     @FindBy(xpath = "//h2[@class='name']")
@@ -36,4 +36,4 @@ public class ProductPage extends BasePage {
 
     public String getProductPrice() {
         return getText(productPrice);
-    }
+    }}

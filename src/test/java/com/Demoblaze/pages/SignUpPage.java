@@ -1,9 +1,9 @@
-package com.demoblaze.pages;
+package com.Demoblaze.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class SignUpPage extends BasePage {
+public class SignUpPage extends com.demoblaze.pages.BasePage {
 
     // Sign up modal elements
     @FindBy(id = "signInModal")

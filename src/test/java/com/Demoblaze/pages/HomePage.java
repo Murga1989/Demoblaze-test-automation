@@ -1,12 +1,13 @@
-package com.demoblaze.pages;
+package com.Demoblaze.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class HomePage extends BasePage {
+public class HomePage extends com.demoblaze.pages.BasePage {
 
     // Header elements
     @FindBy(id = "nava")
@@ -155,13 +156,13 @@ public class HomePage extends BasePage {
     public List<String> getProductTitles() {
         return productTitles.stream()
                 .map(this::getText)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     public List<String> getProductPrices() {
         return productPrices.stream()
                 .map(this::getText)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     public boolean isProductDisplayed(String productName) {
